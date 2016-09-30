@@ -17,6 +17,23 @@
 		};
 	});
 
+	app.controller("ReviewController", function() {
+		this.review = {};
+
+		this.addReview = function(product) {
+			this.review.createdOn = Date.now();
+			product.reviews.push(this.review);
+			this.review = {};
+		};
+	});
+
+	app.directive('productTitle', function () {
+		return {
+			restrict: 'E',
+			templateUrl: 'product-title.html'
+		}
+	});
+
 	var gems = [ 
 		{
 			name: "Soul Gem Shards",
@@ -29,6 +46,20 @@
 					full:"Images/Soul_Gem_Shards_full.png",
 					thumb:"Images/Soul_Gem_Shards_thumb.png"
 				}
+			],
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product",
+					author: "joe@thomas.com",
+					createdOn: '1/1/0001'
+				},
+				{
+					stars: 1,
+					body: "This product sucks",
+					author: "tim@hater.com",
+					createdOn: '1/1/0001'
+				}
 			]
 		},
 		{
@@ -36,11 +67,25 @@
 			price: 200,
 			description: "Filled with Petty Soul.",
 			canPurchase: true,
-			origin: "Tamriel",
+			origin: "Somewhere in Tamriel",
 			images: [
 				{
 					full:"Images/Skyrim_Petty_soul_gem_full.png",
 					thumb:"Images/Skyrim_Petty_soul_gem_thumb.png"
+				}
+			],
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product",
+					author: "joe@thomas.com",
+					createdOn: '1/1/0001'
+				},
+				{
+					stars: 1,
+					body: "This product sucks",
+					author: "tim@hater.com",
+					createdOn: '1/1/0001'
 				}
 			]
 		},			
@@ -55,6 +100,20 @@
 					full:"Images/Skyrim_Lesser_soul_gem_full.png",
 					thumb:"Images/Skyrim_Lesser_soul_gem_thumb.png"
 				}
+			],
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product",
+					author: "joe@thomas.com",
+					createdOn: '1/1/0001'
+				},
+				{
+					stars: 1,
+					body: "This product sucks",
+					author: "tim@hater.com",
+					createdOn: '1/1/0001'
+				}
 			]
 		},
 		{
@@ -67,6 +126,20 @@
 				{
 					full:"Images/Skyrim_Common_soul_gem_full.png",
 					thumb:"Images/Skyrim_Common_soul_gem_thumb.png"
+				}
+			],
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product",
+					author: "joe@thomas.com",
+					createdOn: '1/1/0001'
+				},
+				{
+					stars: 1,
+					body: "This product sucks",
+					author: "tim@hater.com",
+					createdOn: '1/1/0001'
 				}
 			]
 		},
@@ -81,6 +154,20 @@
 					full:"Images/Skyrim_Greater_soul_gem_full.png",
 					thumb:"Images/Skyrim_Greater_soul_gem_thumb.png"
 				}
+			],
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product",
+					author: "joe@thomas.com",
+					createdOn: '1/1/0001'
+				},
+				{
+					stars: 1,
+					body: "This product sucks",
+					author: "tim@hater.com",
+					createdOn: '1/1/0001'
+				}
 			]
 		},
 		{
@@ -94,6 +181,20 @@
 					full:"Images/Skyrim_Grand_soul_gem_full.png",
 					thumb:"Images/Skyrim_Grand_soul_gem_thumb.png"
 				}
+			],
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product",
+					author: "joe@thomas.com",
+					createdOn: '1/1/0001'
+				},
+				{
+					stars: 1,
+					body: "This product sucks",
+					author: "tim@hater.com",
+					createdOn: '1/1/0001'
+				}
 			]
 		},
 		{
@@ -106,6 +207,20 @@
 				{
 					full:"Images/Skyrim_Dark_soul_gem_full.png",
 					thumb:"Images/Skyrim_Dark_soul_gem_thumb.png"
+				}
+			],
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product",
+					author: "joe@thomas.com",
+					createdOn: '1/1/0001'
+				},
+				{
+					stars: 1,
+					body: "This product sucks",
+					author: "tim@hater.com",
+					createdOn: '1/1/0001'
 				}
 			]
 		}
