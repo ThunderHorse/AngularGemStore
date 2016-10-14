@@ -34,6 +34,13 @@
 		}
 	});
 
+	app.directive('productPanels', function () {
+		return {
+			restrict: 'E',
+			templateUrl: 'product-panels.html'
+		};
+	});
+
 	var gems = [ 
 		{
 			name: "Soul Gem Shards",
